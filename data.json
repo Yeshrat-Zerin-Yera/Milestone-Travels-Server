@@ -1,0 +1,44 @@
+[
+    {
+        "serviceName": "International Air Ticketing",
+        "img": "https://i.ibb.co/SvM25TY/international-ait-ticketing.jpg",
+        "rating": 4.5,
+        "price": 200,
+        "description": "Milestone Travels is awaiting your call from 6AM to 6PM, 12 hours a day 365 days a year, or if you prefer you can visit it's e-booking center, which are all supported with the most modern reservation systems implemented by international carriers. Milestone Travels operating special tours upon request. Milestone Travels's high speed and availability in issuing and delivering e-tickets by using most modern technology in the world. Milestone Travels act as advisors to arrange your trip with the best fares and easiest way.In emergency cases your trip can be arranged in the shortest possible time with the least amount of hassle."
+    },
+    {
+        "serviceName": "Domestic Air Ticketing",
+        "img": "https://i.ibb.co/r7xhyq8/domestic-air-ticketing.jpg",
+        "rating": 4.5,
+        "price": 100,
+        "description": "Milestone Travels is awaiting your call from 6AM to 6PM, 12 hours a day 365 days a year, or if you prefer you can visit it's e-booking center, which are all supported with the most modern reservation systems implemented by international carriers. Milestone Travels operating special tours upon request. Milestone Travels's high speed and availability in issuing and delivering e-tickets by using most modern technology in the world. Milestone Travels act as advisors to arrange your trip with the best fares and easiest way.In emergency cases your trip can be arranged in the shortest possible time with the least amount of hassle."
+    },
+    {
+        "serviceName": "Hotel Reservation",
+        "img": "https://i.ibb.co/j5cFL4W/hotel-reservation.jpg",
+        "rating": 5.0,
+        "price": 500,
+        "description": "Choose from a wide range of properties which Milestone Travels offers. Find what you need at Milestone Travels, Milestone Travels is experienced in this area. Read real guest reviews. No booking fees. Best price guarantee. We speak your language."
+    },
+    {
+        "serviceName": "Visa Assistance",
+        "img": "https://i.ibb.co/TLtsKwv/visa-assistance.jpg",
+        "rating": 4.5,
+        "price": 1000,
+        "description": "Travelers who are planning their independent trip throughout the world are welcomed to use exclusive VISA services. Milestone Travels is serving a personal tours for it's clients and the feedbacks written by just a few of the clients who used this services, prove that I am quite professional in this area. Milestone Travels is offering exclusive VISA service to all of it's clients who don't want to go into a hassle to collect their own VISA from High commission. Milestone Travels will process all of your documents and represents you to Embassy, which helps you to get VISA more easily. If you want to travel any country please feel free to contact with me for further discussion."
+    },
+    {
+        "serviceName": "Tour Packages",
+        "img": "https://i.ibb.co/pjjZ2q4/tour-packages.jpg",
+        "rating": 5.0,
+        "price": 500,
+        "description": "Tour Packages through us will be as any other service we present to you. Whether you're going alone, with friends or even with family, we understand what is needed and arrangements will be accordingly to your seeking. Milestone Travels will be always honored to be the one who arranges your trip."
+    },
+    {
+        "serviceName": "Consultancy",
+        "img": "https://i.ibb.co/92KNBs6/consultancy.jpg",
+        "rating": 4.5,
+        "price": 500,
+        "description": "Consultancy Milestone Travels is available from saturday to wednesday, 8AM to 2PM. You can ask anything. Milestone Travels advises clients on travel options and tour packages, makes bookings and reservations, prepares tickets and receives payment. Milestone Travels is enthusiastic about travel, and have good research and organizational skills."
+    }
+]
