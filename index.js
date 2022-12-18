@@ -90,12 +90,12 @@ async function run() {
             res.send(addedReviews);
         });
         // Get Review From Database By Email For A User
-        app.get('/orders', async (req, res) => {
+        app.get('/reviews', async (req, res) => {
             const email = req.query.email;
             const query = { email: email };
-            const cursor = ordersCollection.find(query);
-            const placedOrders = await cursor.toArray();
-            res.send(placedOrders);
+            const cursor = reviewCollection.find(query);
+            const addedReviews = await cursor.toArray();
+            res.send(addedReviews);
         });
         // Get Blogs From Database
         app.get('/blogs', async (req, res) => {
