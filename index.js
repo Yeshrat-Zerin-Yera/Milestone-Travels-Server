@@ -27,6 +27,13 @@ async function run() {
             const services = await cursor.toArray();
             res.send(services);
         });
+        // Get Three Sevices From Database
+        app.get('/home/services', async (req, res) => {
+            const query = {};
+            const cursor = serviceCollection.find(query);
+            const services = await cursor.limit(3).toArray();
+            res.send(services);
+        });
         // Get One Service From Database
         app.get('/services/:id', async (req, res) => {
             const id = req.params.id;
@@ -68,6 +75,34 @@ async function run() {
         //     const result = await ordersCollection.updateOne(query, updatedDoc);
         //     res.send(result);
         // });
+        // Send Review To The Database
+        app.post('/reviews', async (req, res) => {
+            const review = req.body;
+            const result = await reviewCollection.insertOne(review);
+            res.send(result);
+        });
+        // Get Review From Database By Service Id For A Service
+        app.get('/reviews', async (req, res) => {
+            const serviceId = req.query.serviceId;
+            const query = { serviceId: serviceId };
+            const cursor = reviewCollection.find(query);
+            const addedReviews = await cursor.toArray();
+            res.send(addedReviews);
+        });
+        // Get Blogs From Database
+        app.get('/blogs', async (req, res) => {
+            const query = {};
+            const cursor = blogCollection.find(query);
+            const blogs = await cursor.toArray();
+            res.send(blogs);
+        });
+        // Get One Blog From Database
+        app.get('/blogs/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const blogs = await blogCollection.findOne(query);
+            res.send(blogs);
+        });
     }
     finally { }
 };
