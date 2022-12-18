@@ -90,7 +90,7 @@ async function run() {
             res.send(addedReviews);
         });
         // Get Review From Database By Email For A User
-        app.get('/review', async (req, res) => {
+        app.get('/reviews', async (req, res) => {
             const email = req.query.email;
             const query = { email: email };
             const cursor = reviewCollection.find(query);
