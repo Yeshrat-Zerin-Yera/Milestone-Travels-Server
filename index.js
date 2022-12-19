@@ -75,6 +75,7 @@ async function run() {
         //     const result = await ordersCollection.updateOne(query, updatedDoc);
         //     res.send(result);
         // });
+        // ----Reviews----
         // Send Review To The Database
         app.post('/reviews', async (req, res) => {
             const review = req.body;
@@ -85,7 +86,8 @@ async function run() {
         app.get('/reviews', async (req, res) => {
             const serviceId = req.query.serviceId;
             const query = { serviceId: serviceId };
-            const cursor = reviewCollection.find(query);
+            const options = { sort: { time: -1, date: -1 } };
+            const cursor = reviewCollection.find(query, options);
             const addedReviews = await cursor.toArray();
             res.send(addedReviews);
         });
@@ -97,6 +99,7 @@ async function run() {
             const addedReviews = await cursor.toArray();
             res.send(addedReviews);
         });
+        // ----Blogs----
         // Get Blogs From Database
         app.get('/blogs', async (req, res) => {
             const query = {};
