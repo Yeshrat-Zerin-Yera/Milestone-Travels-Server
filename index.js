@@ -58,26 +58,6 @@ async function run() {
             const placedOrders = await cursor.toArray();
             res.send(placedOrders);
         });
-        // Delete Order From Database
-        // app.delete('/orders/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) };
-        //     const result = await ordersCollection.deleteOne(query);
-        //     res.send(result);
-        // });
-        //Modify A Order
-        // app.patch('/orders/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const status = req.body.status;
-        //     const query = { _id: ObjectId(id) };
-        //     const updatedDoc = {
-        //         $set: {
-        //             status: status
-        //         }
-        //     }
-        //     const result = await ordersCollection.updateOne(query, updatedDoc);
-        //     res.send(result);
-        // });
         // ----Reviews----
         // Send Review To The Database
         app.post('/reviews', async (req, res) => {
@@ -152,8 +132,6 @@ async function run() {
     finally { }
 };
 run().catch(error => console.error(error));
-
-
 
 // Get Method Check
 app.get('/', (req, res) => {
