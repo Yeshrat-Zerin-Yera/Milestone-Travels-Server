@@ -20,6 +20,8 @@ async function run() {
         const ordersCollection = client.db('MilestoneTravelsDatabase').collection('Orders');
         const reviewCollection = client.db('MilestoneTravelsDatabase').collection('Reviews');
         const blogCollection = client.db('MilestoneTravelsDatabase').collection('Blogs');
+        const faqCollection = client.db('MilestoneTravelsDatabase').collection('FAQ');
+        // ----Services----
         // Get Sevices From Database
         app.get('/services', async (req, res) => {
             const query = {};
@@ -41,20 +43,21 @@ async function run() {
             const service = await serviceCollection.findOne(query);
             res.send(service);
         });
+        //----Orders----
         // Send Order To The Database
-        // app.post('/orders', async (req, res) => {
-        //     const order = req.body;
-        //     const result = await ordersCollection.insertOne(order);
-        //     res.send(result);
-        // });
+        app.post('/orders', async (req, res) => {
+            const order = req.body;
+            const result = await ordersCollection.insertOne(order);
+            res.send(result);
+        });
         // Get Orders For A Perticular Email
-        // app.get('/orders', async (req, res) => {
-        //     const email = req.query.email;
-        //     const query = { email: email };
-        //     const cursor = ordersCollection.find(query);
-        //     const placedOrders = await cursor.toArray();
-        //     res.send(placedOrders);
-        // });
+        app.get('/orders', async (req, res) => {
+            const email = req.query.email;
+            const query = { email: email };
+            const cursor = ordersCollection.find(query);
+            const placedOrders = await cursor.toArray();
+            res.send(placedOrders);
+        });
         // Delete Order From Database
         // app.delete('/orders/:id', async (req, res) => {
         //     const id = req.params.id;
@@ -100,6 +103,28 @@ async function run() {
             const addedReviews = await cursor.toArray();
             res.send(addedReviews);
         });
+        //Modify A Review
+        app.patch('/myreviews/:id', async (req, res) => {
+            const id = req.params.id;
+            const reviewMessage = req.body.reviewMessage;
+            const rating = req.body.rating;
+            const query = { _id: ObjectId(id) };
+            const updatedDoc = {
+                $set: {
+                    rating: rating,
+                    reviewMessage: reviewMessage
+                }
+            }
+            const result = await reviewCollection.updateOne(query, updatedDoc);
+            res.send(result);
+        });
+        // Delete My Review From Database
+        app.delete('/myreviews/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await reviewCollection.deleteOne(query);
+            res.send(result);
+        });
         // ----Blogs----
         // Get Blogs From Database
         app.get('/blogs', async (req, res) => {
@@ -114,6 +139,14 @@ async function run() {
             const query = { _id: ObjectId(id) };
             const blogs = await blogCollection.findOne(query);
             res.send(blogs);
+        });
+        // ----FAQ----
+        // Get FAQ From Database
+        app.get('/faq', async (req, res) => {
+            const query = {};
+            const cursor = faqCollection.find(query);
+            const faq = await cursor.toArray();
+            res.send(faq);
         });
     }
     finally { }
